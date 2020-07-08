@@ -1,0 +1,11 @@
+{%extends 'index2.html'%}
+{%block titulo%}Crear Producto{%endblock titulo%}
+{%block cuerpo%}
+<h2>Crea un producto</h2>
+<form method="post">
+    {%csrf_token%}
+{{form.as_p}}
+    <button type="Submit">Crear</button>
+</form>
+
+{%endblock cuerpo%}

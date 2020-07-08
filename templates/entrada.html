@@ -1,0 +1,39 @@
+<script type="text/javascript">
+
+    function Saludar(){
+    alert("¿Seguro que desea comprar los productos seleccionados?");
+    }
+
+
+
+</script>
+<br method = "post">
+    {%csrf_token%}
+
+<h2>Datos de la función</h2>
+<label>Nombre de la película : {{object.pelicula}}</label>
+</br>
+</br>
+<label>Fecha de la función:  {{object.fecha}}</label>
+</br>
+</br>
+<label>Hora de la función:  {{object.hora}}</label>
+</br>
+</br>
+<label>Asientos disponibles de la función:  {{object.sala}}</label>
+</br>
+</br>
+<label>Sucursal de la función de la función:  {{object.sucursal}}</label>
+<form>
+</br>
+</br>
+<h2>Identificación</h2>
+</label> Ingrese su Cédula de identidad <input type="number">
+</br>
+</br>
+</label> Ingrese la cantidad de entradas que desea <input type="number">
+</form>
+</br>
+</br>
+<input type = "button" value = "Comprar" onclick = "Saludar()">
+<a href="{% url 'funcionesf'%}">Cancelar</a>

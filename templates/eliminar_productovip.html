@@ -1,0 +1,7 @@
+<form method = "post">
+    {%csrf_token%}
+<h2>¿Desea eliminar al producto {{object}}?</h2>
+<button type = "submit" name = "button">Confirmar</button>
+<a href="{% url 'modificar_o_eliminar_productovip'%}">Cancelar</a>
+</form>
+

@@ -1,0 +1,11 @@
+{%extends 'index2.html'%}
+{%block titulo%}Modificar Producto{%endblock titulo%}
+{%block cuerpo%}
+<form method="post">
+    <h2>Modifica el producto VIP</h2>
+    {%csrf_token%}
+{{form.as_p}}
+    <button type="Submit">Modificar</button>
+</form>
+
+{%endblock cuerpo%}

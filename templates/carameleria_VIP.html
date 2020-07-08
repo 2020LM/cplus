@@ -1,0 +1,33 @@
+<script type="text/javascript">
+
+    function Saludar(){
+    alert("¿Seguro que desea comprar los productos seleccionados?");
+    }
+
+
+
+</script>
+<h2>Caramelería VIP</h2>
+<br method = "post">
+    {%csrf_token%}
+<h2>Ha elegido {{object}}</h2>
+<h3>Datos del producto</h3>
+<label>Cantidad disponible : {{object.cantidad}}</label>
+</br>
+</br>
+<label>El precio del producto es:  {{object.precio}}</label>
+</br>
+</br>
+<label>Inserte la cantidad de {{object}} que desea :  </label> <input type="number">
+</br>
+</br>
+<h2>Identificación</h2>
+</label> Ingrese su Cédula de identidad:  <input type="number">
+</br>
+</br>
+</label> Ingrese la cantidad de {{object}} que desea:  <input type="number">
+</br>
+</br>
+<input type = "button" value = "Comprar" onclick = "Saludar()">
+<a href="{% url 'productos_VIP'%}">Cancelar</a>
+</form>

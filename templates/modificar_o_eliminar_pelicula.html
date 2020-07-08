@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{%block titulo%}Películas disponibles{%endblock titulo%}</title>
+</head>
+<body>
+{% block cuerpo %}
+<h2>Modificar o eliminar película</h2>
+<table border = 2>
+<thead>
+<tr>
+    <th>Nombre</th>
+    <th>En cartelera</th>
+    <th>Género</th>
+    <th>Duración</th>
+    <th>Nacionadilad</th>
+    <th>Modificar</th>
+    <th>Eliminar</th>
+</tr>
+</thead>
+<tbody>
+    {% for pelicula in object_list%}
+    <tr>
+        <td>{{pelicula.nombre}}</td>
+        <td>{{pelicula.enCartelera}}</td>
+        <td>{{pelicula.genero}}</td>
+        <td>{{pelicula.duración}}</td>
+        <td>{{pelicula.nacionalidad}}</td>
+        <td><a href="{% url 'modificar_pelicula' pelicula.id %}" >Modificar</a></td>
+        <td><a href="{% url 'eliminar_pelicula' pelicula.id%}">Eliminar</a></td>
+
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+{% endblock cuerpo %}
+</body>
+</html>

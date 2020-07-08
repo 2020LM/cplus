@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{%block titulo%}Funciones disponibles{%endblock titulo%}</title>
+</head>
+<body>
+
+{% block cuerpo %}
+<h1>Cplus</h1>
+<h2>Funciones Disponibles</h2>
+<table border = 2>
+<thead>
+<tr>
+    <th>Nombre de Película</th>
+    <th>Fecha</th>
+    <th>Hora</th>
+    <th>Asientos Disponibles</th>
+    <th>Sucursal</th>
+    <th>Comprar entradas</th>
+</tr>
+</thead>
+<tbody>
+    {% for funcion in object_list%}
+    <tr>
+        <td>{{funcion.pelicula}}</td>
+        <td>{{funcion.fecha}}</td>
+        <td>{{funcion.hora}}</td>
+        <td>{{funcion.sala}}</td>
+        <td>{{funcion.sucursal}}</td>
+        <td><a href="{% url 'entrada' funcion.id %}" >Comprar entrada</a></td>
+
+
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+{% endblock cuerpo %}
+</body>
+</html>

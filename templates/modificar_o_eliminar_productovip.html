@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{%block titulo%}Modificar o Eliminar Producto{%endblock titulo%}</title>
+</head>
+<body>
+{% block cuerpo %}
+
+<h2>Productos disponibles (editar o elimiar)</h2>
+<table border = 2>
+<thead>
+<tr>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Tipo</th>
+    <th>Precio</th>
+    <th>Cantidad disponible</th>
+    <th>Modificar</th>
+    <th>Eliminar</th>
+
+</tr>
+</thead>
+<tbody>
+    {% for producto in object_list%}
+    <tr>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.descripcion}}</td>
+        <td>{{producto.tipo}}</td>
+        <td>{{producto.precio}}</td>
+        <td>{{producto.cantidad}}</td>
+        <td><a href="{% url 'modificar_productovip' producto.id %}" >Modificar</a></td>
+        <td><a href="{% url 'eliminar_productovip' producto.id %}" >Eliminar</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+{% endblock cuerpo %}
+</body>
+</html>

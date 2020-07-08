@@ -1,0 +1,6 @@
+<form method = "post">
+    {%csrf_token%}
+<h2>¿Desea eliminar a la pelicula {{object}}?</h2>
+<button type = "submit" name = "button">Confirmar</button>
+<a href="{% url 'index2'%}">Cancelar</a>
+</form>

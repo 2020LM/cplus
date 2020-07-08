@@ -1,0 +1,10 @@
+{%extends 'index2.html'%}
+{%block titulo%}Crear Películas{%endblock titulo%}
+{%block cuerpo%}
+<form method="post">
+    {%csrf_token%}
+{{form.as_p}}
+    <button type="Submit">Crear</button>
+</form>
+
+{%endblock cuerpo%}
